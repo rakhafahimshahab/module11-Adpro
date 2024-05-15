@@ -1,0 +1,31 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: "2024-05-15T06:53:01Z"
+  labels:
+    app: spring-petclinic-rest
+  name: spring-petclinic-rest
+  namespace: default
+  resourceVersion: "4250"
+  uid: b7843036-2d9d-465d-bebe-a01facf42bbf
+spec:
+  allocateLoadBalancerNodePorts: true
+  clusterIP: 10.97.165.161
+  clusterIPs:
+  - 10.97.165.161
+  externalTrafficPolicy: Cluster
+  internalTrafficPolicy: Cluster
+  ipFamilies:
+  - IPv4
+  ipFamilyPolicy: SingleStack
+  ports:
+  - nodePort: 30708
+    port: 9966
+    protocol: TCP
+    targetPort: 9966
+  selector:
+    app: spring-petclinic-rest
+  sessionAffinity: None
+  type: LoadBalancer
+status:
+  loadBalancer: {}
